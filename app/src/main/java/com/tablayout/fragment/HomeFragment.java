@@ -14,6 +14,9 @@ import android.widget.Button;
 import com.tablayout.R;
 import com.tablayout.view.ImageViewAnimation;
 
+/**
+ * 主页
+ */
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     public HomeFragment() {
