@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.tablayout.fragment.HomeFragment"
+              android:background="#cfc"
+              android:orientation="vertical"
+    >
+
+  <com.tablayout.view.ImageViewAnimation
+      android:id="@+id/imageviewnaimation"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_horizontal"
+      />
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="动画效果"
+      android:id="@+id/textView2"
+      android:textColor="@android:color/white"
+      />
+
+  <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="缩放动画"
+      android:id="@+id/button"
+      />
+
+  <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="平移动画"
+      android:id="@+id/button2"
+      />
+
+  <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="翻转动画"
+      android:id="@+id/button3"
+      />
+  <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="透明动画"
+      android:id="@+id/button4"
+      />
+  <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="组合动画"
+      android:id="@+id/button5"
+      />
+</LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tablayout.MainActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:id="@+id/linearLayout"
+        android:background="#FF8000"
+        >
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="扫一扫"
+            android:id="@+id/radioButton"
+            android:button="@null"
+            android:drawableTop="@mipmap/ic_launcher"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:drawableRight="@mipmap/ic_launcher"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:background="#f00"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="消息"
+            android:id="@+id/radioButton1"
+            android:button="@null"
+            android:gravity="center_horizontal"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:checked="false"
+            />
+    </LinearLayout>
+
+    <com.tablayout.view.NoScrollViewPager
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewpager"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        />
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="#aaa"
+        app:tabIndicatorColor="@color/colorPrimaryDark"
+        app:tabSelectedTextColor="#f00"
+        app:tabTextColor="#ccc"
+        app:tabGravity="fill"
+        app:tabMode="fixed"/>
+
+
+
+</RelativeLayout>
