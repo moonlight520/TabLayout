@@ -1,15 +1,59 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context="com.tablayout.fragment.TinyTaoFragment"
+
+              android:orientation="vertical"
     >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="微淘"
-        />
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:id="@+id/tiny_tao_layout"
+      >
+      <!-- TODO: Update blank fragment layout -->
+      <TextView
+          android:id="@+id/tiny_tao_title"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="2222222222222222222222222222222222222222222"
 
-</FrameLayout>
+          />
+  </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="70dp"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="show"
+            android:id="@+id/show"
+            android:layout_gravity="bottom"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="buy"
+            android:id="@+id/buy"
+            android:layout_gravity="bottom"
+            />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dismiss"
+            android:id="@+id/dismiss"
+            />
+    </LinearLayout>
+
+</LinearLayout>

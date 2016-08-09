@@ -4,30 +4,21 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.RotateAnimation;
-import android.view.animation.ScaleAnimation;
 import android.view.animation.Transformation;
-import android.view.animation.TranslateAnimation;
 
 /**
  * Created by moon on 2016/8/3.
  */
 public class ImageViewAnimation extends View {
     private Paint mPaint ,mPaint1;
-    float my_x = 100;
-    float my_y = 100;
-    float angle = 80;
+/*
     private int height, width;
-    private int mCount;
+    private int mCount;*/
     private float mSweepAnglePer;
     private float mSweepAngle;
     BarAnimation anim;
@@ -108,13 +99,7 @@ public class ImageViewAnimation extends View {
     }
 
     public class BarAnimation extends Animation {
-        /**
-         * Initializes expand collapse animation, has two types, collapse (1) and expand (0).
-         *
-         * @param view The view to animate
-         * @param type The type of animation: 0 will expand from gone and 0 size to visible and layout size defined in xml.
-         *             1 will collapse view and set to gone
-         */
+
         public BarAnimation() {
         }
 

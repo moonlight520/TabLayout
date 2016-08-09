@@ -7,6 +7,56 @@
               android:orientation="vertical"
     >
 
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="center_vertical"
+      android:paddingLeft="5dp"
+      android:paddingRight="5dp"
+      android:id="@+id/linearLayout"
+      android:background="#FF8000"
+      >
+
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="扫一扫"
+        android:id="@+id/radioButton"
+        android:button="@null"
+        android:drawableTop="@mipmap/ic_launcher"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:drawableRight="@mipmap/ic_launcher"
+        android:drawableLeft="@mipmap/ic_launcher"
+        android:background="#f00"
+        />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="消息"
+        android:id="@+id/radioButton1"
+        android:button="@null"
+        android:gravity="center_horizontal"
+        android:drawableTop="@mipmap/ic_launcher"
+        android:checked="false"
+        />
+  </LinearLayout>
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
   <com.tablayout.view.ImageViewAnimation
       android:id="@+id/imageviewnaimation"
       android:layout_width="wrap_content"
@@ -17,10 +67,12 @@
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="动画效果"
-      android:id="@+id/textView2"
-      android:textColor="@android:color/white"
+      android:text="点击出现动画"
+      android:id="@+id/textView3"
+      android:layout_gravity="center"
       />
+</FrameLayout>
+
 
   <Button
       android:layout_width="wrap_content"
