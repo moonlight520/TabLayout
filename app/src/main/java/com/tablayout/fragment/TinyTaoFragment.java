@@ -26,7 +26,7 @@ public class TinyTaoFragment extends Fragment implements View.OnClickListener {
     private Button mBtn_show,mBtn_buy,mBtn_dismiss;
     private TextView title;
     private View tiny_tao_layout;
-    PopupWindow popupWindow;
+    public PopupWindow popupWindow;
     GestureDetector mGestureDetector;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,7 +60,7 @@ public class TinyTaoFragment extends Fragment implements View.OnClickListener {
                     consume=true;
                     popupWindow.dismiss();
                 }
-                Toast.makeText(TinyTaoFragment.this.getActivity(),"layout"+popupWindow.isShowing(),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(TinyTaoFragment.this.getActivity(),"layout"+popupWindow.isShowing(),Toast.LENGTH_SHORT).show();
 
                 return consume;
             }
@@ -100,6 +100,9 @@ public class TinyTaoFragment extends Fragment implements View.OnClickListener {
             }
         });
     }
+    public boolean  isPopupWindowShow(){
+        return  popupWindow.isShowing();
 
+    }
 
 }
