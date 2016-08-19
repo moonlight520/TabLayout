@@ -3,6 +3,8 @@ package com.tablayout.fragment;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.tablayout.OpenDoorAnimationActivity;
 import com.tablayout.R;
 import com.tablayout.view.ImageViewAnimation;
 
@@ -25,8 +28,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private ImageViewAnimation imageViewAnimation;
     private ObjectAnimator objectAnimator, objectAnimator1, objectAnimator2, objectAnimator3;
     private AnimatorSet set;
-    private Button btn, btn2,btn3,btn4,btn5;
-
+    private Button btn, btn2,btn3,btn4,btn5,rb_saosao;
+    private Intent intent;
+    private Context mContext;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,17 +41,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        intent=new Intent();
+        mContext=getActivity();
         imageViewAnimation = (ImageViewAnimation) view.findViewById(R.id.imageviewnaimation);
         btn = (Button) view.findViewById(R.id.button);
         btn2 = (Button) view.findViewById(R.id.button2);
         btn3 = (Button) view.findViewById(R.id.button3);
         btn4 = (Button) view.findViewById(R.id.button4);
         btn5 = (Button) view.findViewById(R.id.button5);
+        rb_saosao= (Button) view.findViewById(R.id.rb_saosao);
         btn.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
         btn4.setOnClickListener(this);
         btn5.setOnClickListener(this);
+        rb_saosao.setOnClickListener(this);
         imageViewAnimation.setSweepAngle(360);
         imageViewAnimation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +100,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 //TimeInterpolator timeInterpolator=
                 set.start();
 
+                break;
+            case R.id.rb_saosao:
+                intent.setClass(mContext, OpenDoorAnimationActivity.class);
+                startActivity(intent);
                 break;
         }
     }

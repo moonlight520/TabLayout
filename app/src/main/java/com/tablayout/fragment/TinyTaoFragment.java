@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.tablayout.R;
 
@@ -23,11 +22,12 @@ import static com.tablayout.R.layout.pop_layout;
  * A simple {@link Fragment} subclass.
  */
 public class TinyTaoFragment extends Fragment implements View.OnClickListener {
-    private Button mBtn_show,mBtn_buy,mBtn_dismiss;
+    private Button mBtn_show, mBtn_buy, mBtn_dismiss;
     private TextView title;
     private View tiny_tao_layout;
     public PopupWindow popupWindow;
     GestureDetector mGestureDetector;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,22 +42,23 @@ public class TinyTaoFragment extends Fragment implements View.OnClickListener {
     }
 
 
-    public void initView(View view){
-        mBtn_show= (Button) view.findViewById(R.id.show);
-        mBtn_buy= (Button) view.findViewById(R.id.buy);
-        mBtn_dismiss= (Button) view.findViewById(R.id.dismiss);
-        title= (TextView) view.findViewById(R.id.tiny_tao_title);
-        tiny_tao_layout=view.findViewById(R.id.tiny_tao_layout);
+    public void initView(View view) {
+        mBtn_show = (Button) view.findViewById(R.id.show);
+        mBtn_buy = (Button) view.findViewById(R.id.buy);
+        mBtn_dismiss = (Button) view.findViewById(R.id.dismiss);
+        title = (TextView) view.findViewById(R.id.tiny_tao_title);
+        tiny_tao_layout = view.findViewById(R.id.tiny_tao_layout);
         mBtn_show.setOnClickListener(this);
         mBtn_buy.setOnClickListener(this);
         mBtn_dismiss.setOnClickListener(this);
         tiny_tao_layout.setOnTouchListener(new View.OnTouchListener() {
-            boolean consume=false;
+            boolean consume = false;
+
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
-                if(popupWindow.isShowing()){
-                    consume=true;
+                if (popupWindow.isShowing()) {
+                    consume = true;
                     popupWindow.dismiss();
                 }
                 //Toast.makeText(TinyTaoFragment.this.getActivity(),"layout"+popupWindow.isShowing(),Toast.LENGTH_SHORT).show();
@@ -69,27 +70,27 @@ public class TinyTaoFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.show:
-                 if(popupWindow==null){
-                     initPopupWindow();
-                 }
+                if (popupWindow == null) {
+                    initPopupWindow();
+                }
                 tiny_tao_layout.setFocusable(true);
                 popupWindow.showAsDropDown(title);
                 tiny_tao_layout.setAlpha(0.2f);
                 break;
             case R.id.buy:
-                Toast.makeText(getActivity(),"buy",Toast.LENGTH_SHORT).show();
-                popupWindow.dismiss();
+               closePopupwindow();
                 break;
             case R.id.dismiss:
-                popupWindow.dismiss();
+                closePopupwindow();
                 break;
         }
     }
-    public void initPopupWindow(){
-        View view=getActivity().getLayoutInflater().inflate(pop_layout,null);
-         popupWindow=new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT,300,false);
+
+    public void initPopupWindow() {
+        View view = getActivity().getLayoutInflater().inflate(pop_layout, null);
+        popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT, 300, false);
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
         popupWindow.setOutsideTouchable(false);
 
@@ -100,9 +101,10 @@ public class TinyTaoFragment extends Fragment implements View.OnClickListener {
             }
         });
     }
-    public boolean  isPopupWindowShow(){
-        return  popupWindow.isShowing();
-
-    }
+      public void closePopupwindow(){
+          if(popupWindow!=null&&popupWindow.isShowing()){
+              popupWindow.dismiss();
+          }
+      }
 
 }

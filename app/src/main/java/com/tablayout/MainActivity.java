@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
     private List<String> list_tab;
     private MyViewPagerAdapter mMyViewPagerAdapter;
     private int COUNT = 5;
-    private Fragment mHomeFragment,
-    mTinyTaoFragment, mLiveFragment,
+    private Fragment mHomeFragment, mLiveFragment,
     mShopCarFragment,mMyTaoBaoFragment;
+    private TinyTaoFragment mTinyTaoFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,10 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-                if(mTinyTaoFragment.isVisible()){
 
-
-                }
             return list.get(position);
         }
 

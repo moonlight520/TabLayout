@@ -23,9 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="扫一扫"
-        android:id="@+id/radioButton"
+        android:id="@+id/rb_saosao"
         android:button="@null"
         android:drawableTop="@mipmap/ic_launcher"
+        android:checked="false"
         />
 
     <EditText
